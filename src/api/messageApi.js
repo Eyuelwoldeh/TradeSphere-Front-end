@@ -5,12 +5,12 @@ export const getMessagesForChat = async (senderUid, receiverUid) => {
     return response.data;
 };
 
-export const getChatUsers = async () => {
-    const response = await axiosInstance.get("/messages/chat-users");
+export const getChatUsers = async (uid) => {
+    const response = await axiosInstance.get(`/messages/chat-users/${uid}`);
     return response.data;
 };
 
-export const sendMessage = async (senderId, receiverId, content) => {
-    const response = await axiosInstance.post("/messages", { senderId, receiverId, content });
+export const sendMessage = async (senderUid, receiverUid, content) => {
+    const response = await axiosInstance.post("/messages", { senderUid, receiverUid, content });
     return response.data;
 };

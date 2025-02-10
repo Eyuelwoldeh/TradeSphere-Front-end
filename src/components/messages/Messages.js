@@ -20,11 +20,11 @@ function Messages() {
     const handleSendMessage = async (e) => {
         e.preventDefault();
         if (!newMessage.trim()) return;
-
+    
         const message = await sendMessage(user.uid, selectedUser.uid, newMessage);
         setMessages([...messages, message]);
         setNewMessage("");
-    };
+    };    
 
     return (
         <div className="flex h-screen">
